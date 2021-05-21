@@ -34,6 +34,7 @@ public class PlayerControlls : MonoBehaviour
     private void Awake()    //set up predetermined variables
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        
         Vector3 localScale = transform.localScale;
         playerHalfWidth = localScale.x / 2;
         playerHalfHight = localScale.y / 2;
@@ -43,6 +44,14 @@ public class PlayerControlls : MonoBehaviour
     {
         if (playerControlLess)  //No need to check player controls if player is control less
             return;
+        
+        
+        /* Markus Kommentar:
+         * Lurt å ha Input i Update. (Med det nye Input Systemet så trenger ikke input være i Update men kan heller vøære i egen funksjon
+         * Det å ha det i fixedupdate kan forårsake at det blir noen missed frames som gjør at kontrollene føles unøyaktige-
+         *
+         * Generelt vil man ha Fysikk i Fixed Update, det meste annet kan holdes i Update.
+         */
         
         //get player input
         horizontalInput = Input.GetAxis("Horizontal");
@@ -60,6 +69,11 @@ public class PlayerControlls : MonoBehaviour
         if (jumpInput == 0) //No need to test jump conditions if jump key not pressed
             return;
 
+        /* Markus Kommentar:
+         * Du kan walljumpe mens du står på bakken.
+         * Helst burde man ikke kunne walljumpe så lenge man rører ved bakken.
+         */
+        
         if (playerInAir)
         {
             if (CheckForFloor())        //if touching ground reset playerInAir, and wallJumpsUsed
@@ -70,6 +84,7 @@ public class PlayerControlls : MonoBehaviour
 
             if (wallJumpUsed)       //no need to test wall jump conditions if wall jump is used
                 return;
+            
             if (CheckForWall(Vector2.right))        //Wall jump if wall jumps not used, player in air, and space pressed, and is next to wall
             {
                 Jump(Vector2.left * wallJumpHorizontalForce);
@@ -117,3 +132,11 @@ public class PlayerControlls : MonoBehaviour
         playerControlLess = false;
     }
 }
+
+/* Markus Kommentar
+* Veldig bra arbeid! Utrolig digg walljump, føles skikkelig smooth ut å bruke.
+ 
+  TODO: Bugs
+  TODO: Av og til når man hopper opp og treffer siden av en platform så walljumper man litt til siden
+  
+*/
