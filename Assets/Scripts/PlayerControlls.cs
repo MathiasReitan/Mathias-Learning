@@ -4,28 +4,36 @@ using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 
-//  Player Controlls Features:
-//      Move left and right
-//      Jump when on ground
-//      Wall jump once, before landing on ground again
-//          Wall jump will make player lose control for a short while
+/*  Player Controlls Features:
+        Move left and right
+        Jump when on ground
+            If jump is pressed just before hitting the ground it will still be detected
+        Wall jump once, before landing on ground again
+            Wall jump will make player lose control for a short while
+*/
 
 public class PlayerControlls : MonoBehaviour
 {
+    [Header("Left Right Controlls")]
     [Tooltip("Characters speed left and right")]
     public float horizontalSpeed = 10.0f;
     [Tooltip("Force applied when jumping")]
+    [Header("Jump Controlls")]
     public float jumpForce = 1600.0f;
+    [Tooltip("Seconds deciding how long after jump being pressed it will still detect a jump (does not affect wall jumping)")]
+    public float jumpExtraDetectionTime = 0.2f;
+    [Header("Wall Jump Controlls")]
     [Tooltip("Force pushing player away from the wall when wall jumping")]
     public float wallJumpHorizontalForce = 500.0f;
     [Tooltip("Timespan seconds player loses control after wall jumping")]
     public float wallJumpControlLossTime = 3.0f;
 
     private float horizontalInput = 0;
-    private float jumpInput = 0;
+    private bool jumpInput = false;
     private bool wallJumpUsed = false;
-    private bool playerInAir = true;
+    private bool playerInAir = false;
     private bool playerControlLess = false;
+    private float secondsSinceLastJumpPress = 10.0f;
 
     private Rigidbody2D rigidbody;
     private float playerHalfWidth;
@@ -40,9 +48,22 @@ public class PlayerControlls : MonoBehaviour
         playerHalfHight = localScale.y / 2;
     }
 
+    private void Update()
+    {
+        //get player input
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpInput = true;
+            secondsSinceLastJumpPress = 0;
+        }
+
+        secondsSinceLastJumpPress += Time.deltaTime;
+    }
+
     private void FixedUpdate()
     {
-        if (playerControlLess)  //No need to check player controls if player is control less
+        if (playerControlLess)  //No need to check player controls if player is control-less
             return;
         
         
@@ -52,10 +73,8 @@ public class PlayerControlls : MonoBehaviour
          *
          * Generelt vil man ha Fysikk i Fixed Update, det meste annet kan holdes i Update.
          */
+        //FIXED
         
-        //get player input
-        horizontalInput = Input.GetAxis("Horizontal");
-        jumpInput = Input.GetAxis("Jump");
 
         //do horizontal output
         if (horizontalInput != 0)
@@ -63,16 +82,16 @@ public class PlayerControlls : MonoBehaviour
             rigidbody.velocity *= Vector2.up;   //set x velocity from wall jump to zero, to not add to horizontal input
             transform.Translate(horizontalInput * Time.deltaTime * horizontalSpeed * Vector3.right);
         }
-
         
         //do jump output
-        if (jumpInput == 0) //No need to test jump conditions if jump key not pressed
+        if (!jumpInput && secondsSinceLastJumpPress > jumpExtraDetectionTime) //No need to test jump conditions if jump key not pressed
             return;
 
         /* Markus Kommentar:
          * Du kan walljumpe mens du står på bakken.
          * Helst burde man ikke kunne walljumpe så lenge man rører ved bakken.
          */
+        //FIXED
         
         if (playerInAir)
         {
@@ -82,10 +101,10 @@ public class PlayerControlls : MonoBehaviour
                 wallJumpUsed = false;
             }
 
-            if (wallJumpUsed)       //no need to test wall jump conditions if wall jump is used
+            if (wallJumpUsed || !playerInAir || !jumpInput)       //no need to test wall jump conditions if wall jump is used, or player is on ground
                 return;
             
-            if (CheckForWall(Vector2.right))        //Wall jump if wall jumps not used, player in air, and space pressed, and is next to wall
+            if (CheckForWall(Vector2.right))        //Wall jump if wall jump not used, player in air, and space pressed, and is next to wall
             {
                 Jump(Vector2.left * wallJumpHorizontalForce);
                 wallJumpUsed = true;
@@ -102,6 +121,8 @@ public class PlayerControlls : MonoBehaviour
         {
             Jump(Vector2.zero);     //Jump normal if player is not in the air, and space pressed
         }
+
+        jumpInput = false;
     }
 
     private void Jump(Vector2 additionalForce) //jumping
@@ -135,8 +156,13 @@ public class PlayerControlls : MonoBehaviour
 
 /* Markus Kommentar
 * Veldig bra arbeid! Utrolig digg walljump, føles skikkelig smooth ut å bruke.
+
  
   TODO: Bugs
+  
   TODO: Av og til når man hopper opp og treffer siden av en platform så walljumper man litt til siden
+  FIXED
+  TODO: ny bug der det ikke blir registrert hopp hvis en trykker like før en treffer platformen
+  FIXED
   
 */

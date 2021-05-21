@@ -856,11 +856,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 79862793221331966, guid: 96c92ccd01c58de4a825bab603cf8102, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.82
+      value: -2.05
       objectReference: {fileID: 0}
     - target: {fileID: 79862793221331966, guid: 96c92ccd01c58de4a825bab603cf8102, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.72
+      value: -7.8
       objectReference: {fileID: 0}
     - target: {fileID: 79862793221331966, guid: 96c92ccd01c58de4a825bab603cf8102, type: 3}
       propertyPath: m_LocalPosition.z
@@ -895,8 +895,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1088786959160104410, guid: 96c92ccd01c58de4a825bab603cf8102, type: 3}
+      propertyPath: jumpExtraDetectionTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088786959160104410, guid: 96c92ccd01c58de4a825bab603cf8102, type: 3}
       propertyPath: wallJumpControlLossTime
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1088786959160104410, guid: 96c92ccd01c58de4a825bab603cf8102, type: 3}
       propertyPath: wallJumpHorizontalForce
