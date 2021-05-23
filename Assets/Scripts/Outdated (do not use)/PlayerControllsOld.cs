@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 
-/*  Player Controlls Features:
+/*  Gives player ability to be controlled
+    Compatible with the Platform prefab
+    Player-Controls Features:
         Move left and right
         Jump when on ground
             If jump is pressed just before hitting the ground it will still be detected
-        Wall jump once, before landing on ground again
+        Wall jump
             Wall jump will make player lose control for a short while
 */
 
-public class PlayerControlls : MonoBehaviour
+public class PlayerControllsOld : MonoBehaviour
 {
     [Header("Left Right Controlls")]
     [Tooltip("Characters speed left and right")]
