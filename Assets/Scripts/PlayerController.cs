@@ -66,6 +66,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnJump(InputValue value)
     {
+        
+        // Handy info: du kan faktisk bruke fuksjonen TouchingFloor()
+        // direkte i if statementen uten å binde den til en bool variabel. da den allerede er en bool.
+        
+        /*
+         * Eksempel:
+         * if (!TouchingFloor() && lastWallJumpDirection != Vector2.left && TouchingWall(Vector2.right)
+         * vil fungere helt likt som grounded boolen din.
+         */
         bool grounded = TouchingFloor();
         
         //do wall jump if possible
@@ -89,11 +98,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        /*
+         *  Calculate Horizontal Forces kunne vært en egen funksjon bare for å rydde opp Update litt.
+         */
+        
         //Calculate horizontalForce
         if (horizontalInput == 0 && horizontalForce != 0)
         {
             int positiveOrNegative = (horizontalForce > 0) ? 1 : -1;
+            
             horizontalForce -= 1 / decelerationTime * maxHorizontalSpeed * Time.deltaTime * positiveOrNegative;
+            
             int newPositiovbeOrNegative = (horizontalForce > 0) ? 1 : -1;
             if (positiveOrNegative != newPositiovbeOrNegative)
             {
