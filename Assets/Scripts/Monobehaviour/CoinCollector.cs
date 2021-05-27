@@ -21,7 +21,7 @@ public class CoinCollector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.gameObject.CompareTag("Coin"))   //only do following code with coins
+        if (!other.gameObject.CompareTag("Coin") || GameInfo.gameOver)   //only do following code with coins, if game not over
             return;
         
         Destroy(other.gameObject);      //slaughter the coin on contact
@@ -29,6 +29,7 @@ public class CoinCollector : MonoBehaviour
         if (++coinCount >= neededCoins)     //add to coinCount, and check if enough is collected
         {
             Debug.Log("Winner :))");
+            GameInfo.gameWon = true;
         }
     }
 }

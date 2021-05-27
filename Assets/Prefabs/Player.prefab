@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3236403850791742102}
   - component: {fileID: 7760229658528354705}
   - component: {fileID: 3225708925968016502}
+  - component: {fileID: 6241510777739851758}
+  - component: {fileID: 6768089344871154430}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -191,6 +193,7 @@ MonoBehaviour:
   jumpExtraDetectionTime: 0.2
   wallJumpHorizontalForce: 550
   wallJumpControlLossTime: 0.5
+  isTouchingFloor: 0
 --- !u!114 &3225708925968016502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,3 +208,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neededCoins: 0
   coinCount: 0
+--- !u!114 &6241510777739851758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79862793221331960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295af88bf9958904b931ad63d9c9d413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  damagedColor: {r: 1, g: 0.5803922, b: 0.5803922, a: 1}
+  damagedColorSeconds: 0.1
+  invincibilityBoostSeconds: 2
+  invincibilityFlashRate: 0.15
+  invincibilityOpacity: 0.25
+--- !u!114 &6768089344871154430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79862793221331960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49fb9e9232441274dab20b3c18a72c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

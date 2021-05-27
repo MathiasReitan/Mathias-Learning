@@ -15,6 +15,7 @@ using UnityEngine.InputSystem.Composites;
         Wall jump
             Wall jump will make player lose control for a short while
             Cannot wall jump same direction more than once (must shift left right)
+        On moving platforms, will follow platform dynamically
 */
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -44,7 +45,8 @@ public class PlayerController : MonoBehaviour
     private float secondsLastJumpPress = 0;
     private bool playerControlLess = false;
     private Vector2 lastWallJumpDirection = Vector2.zero;
-
+    private bool isTouchingFloor = false;
+    
     private Rigidbody2D rigidbody2D;
     private LayerMask platformLayerMask;
     private float playerHalfHight;
@@ -56,6 +58,11 @@ public class PlayerController : MonoBehaviour
         platformLayerMask = LayerMask.GetMask("Platform");
         playerHalfHight = transform.localScale.y / 2;
         playerHalfWidth = transform.localScale.x / 2;
+    }
+
+    private void Start()
+    {
+        secondsLastJumpPress = jumpExtraDetectionTime; //set to avoid player jumping when scene loaded
     }
 
     private void OnWalk(InputValue value)
@@ -75,17 +82,17 @@ public class PlayerController : MonoBehaviour
          * if (!TouchingFloor() && lastWallJumpDirection != Vector2.left && TouchingWall(Vector2.right)
          * vil fungere helt likt som grounded boolen din.
          */
-        bool grounded = TouchingFloor();
-        
+        //Kjekkt å vite, endte opp med en delt variabel for update og OnJump, med noen forandringer i scriptet ¯\_(ツ)_/¯
+
         //do wall jump if possible
         //    (normal wall jump is in update because of the extra time detection)
-        if (!grounded && lastWallJumpDirection != Vector2.left && TouchingWall(Vector2.right))
+        if (!isTouchingFloor && lastWallJumpDirection != Vector2.left && TouchingWall(Vector2.right))
         {
             WallJump(-wallJumpHorizontalForce);
             lastWallJumpDirection = Vector2.left;
             return;
         }
-        if (!grounded && lastWallJumpDirection != Vector2.right && TouchingWall(Vector2.left))
+        if (!isTouchingFloor && lastWallJumpDirection != Vector2.right && TouchingWall(Vector2.left))
         {
             WallJump(wallJumpHorizontalForce);
             lastWallJumpDirection = Vector2.right;
@@ -98,10 +105,43 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (GameInfo.gameOver)
+        {
+            return;
+        }
         /*
          *  Calculate Horizontal Forces kunne vært en egen funksjon bare for å rydde opp Update litt.
          */
+        //Fixed
+        CalculateHorizontalForce();
         
+        //ground check
+        isTouchingFloor = TouchingFloor();
+
+        if (isTouchingFloor)  //reset wall jump direction if on ground
+        {
+            lastWallJumpDirection = Vector2.zero;
+        }
+        
+        //check if jump possible, and update seconds since last jump press
+        secondsLastJumpPress += Time.deltaTime;
+        if (secondsLastJumpPress <= jumpExtraDetectionTime && isTouchingFloor)
+        {
+            Jump();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (playerControlLess || horizontalForce == 0.0f || GameInfo.gameOver)
+            return;
+        //apply horizontal movement, if player has control and there is something to apply
+        rigidbody2D.velocity *= Vector2.up; //set velocity x to zero to not add to moving position manually 
+        transform.Translate(horizontalForce * Time.fixedDeltaTime * Vector3.right);
+    }
+
+    private void CalculateHorizontalForce()
+    {
         //Calculate horizontalForce
         if (horizontalInput == 0 && horizontalForce != 0)
         {
@@ -123,30 +163,6 @@ public class PlayerController : MonoBehaviour
                 horizontalForce = maxHorizontalSpeed * horizontalInput;
             }
         }
-        
-        //ground check
-        bool grounded = TouchingFloor();
-
-        if (grounded)  //reset wall jump direction if on ground
-        {
-            lastWallJumpDirection = Vector2.zero;
-        }
-        
-        //check if jump possible, and update seconds since last jump press
-        secondsLastJumpPress += Time.deltaTime;
-        if (secondsLastJumpPress <= jumpExtraDetectionTime && grounded)
-        {
-            Jump();
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (playerControlLess || horizontalForce == 0.0f)
-            return;
-        //apply horizontal movement, if player has control and there is something to apply
-        rigidbody2D.velocity *= Vector2.up; //set velocity x to zero to not add to moving position manually 
-        transform.Translate(horizontalForce * Time.fixedDeltaTime * Vector3.right);
     }
 
     //player jumps normally
@@ -168,19 +184,27 @@ public class PlayerController : MonoBehaviour
     //check if player is touching floor
     private bool TouchingFloor()
     {
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, Vector2.down, playerHalfHight + 0.1f, platformLayerMask);
-        return raycastHit2D.collider != null;
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position, new Vector2(playerHalfWidth, 0.2f), 0.0f,
+            Vector2.down, playerHalfHight, platformLayerMask);
+        if (raycastHit2D.collider == null)
+        {
+            transform.parent = null; //remove parent since is not touching floor
+            return false;
+        }
+        transform.parent = raycastHit2D.transform; //set player parent to hit object to make player move with moving platforms
+        return true;
     }
 
     //check if player is touching wall
     private bool TouchingWall(Vector2 direction)
     {
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, direction, playerHalfWidth + 0.1f, platformLayerMask);
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position, new Vector2(0.2f, playerHalfHight), 0.0f,
+            direction, playerHalfWidth, platformLayerMask);
         return raycastHit2D.collider != null;
     }
 
     //set playerControlLess to true for a specified time
-    private IEnumerator ControllLossTimer(float timeSeconds)
+    public IEnumerator ControllLossTimer(float timeSeconds)
     {
         playerControlLess = true;
         yield return new WaitForSeconds(timeSeconds);

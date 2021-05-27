@@ -19,7 +19,6 @@ public class Countdown : MonoBehaviour
     public Color shortTimeColor;
 
     private float currentTime = 60;
-    private bool gameOver = false;
 
     private TextMeshProUGUI textMeshProUGUI;
 
@@ -36,14 +35,14 @@ public class Countdown : MonoBehaviour
 
     private void Update()
     {
-        if (gameOver)
+        if (GameInfo.gameOver)
             return;
 
         currentTime = Math.Max(0, currentTime - Time.deltaTime);
         textMeshProUGUI.text = currentTime.ToString("0.00");
-        if (currentTime <= 0)
+        if (currentTime <= 0 && !GameInfo.gameWon)
         {
-            gameOver = true;
+            GameInfo.gameOver = true;
             Debug.Log("Game Over :')");
         }
         else if (currentTime <= shortTimeCap)
