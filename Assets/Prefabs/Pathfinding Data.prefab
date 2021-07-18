@@ -1,0 +1,1803 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2711690714454907672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2711690714454907674}
+  - component: {fileID: 2711690714454907675}
+  m_Layer: 0
+  m_Name: Pathfinding Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2711690714454907674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2711690714454907672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2711690714454907675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2711690714454907672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eecf6cc565c4fcb4799190585396e18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathfindingGameObject: {fileID: 0}
+  pathFindingNodes:
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -13.5
+      jumpStartX: 11.5
+      jumpDistance: 10
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -13.5
+      jumpStartX: 11.5
+      jumpDistance: -10
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -13.5
+      jumpStartX: -11.5
+      jumpDistance: 10
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -13.5
+      jumpStartX: -11.5
+      jumpDistance: -10
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -13.5
+      jumpStartX: 34
+      jumpDistance: -10
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -13.5
+      jumpStartX: -34
+      jumpDistance: 10
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: -18.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: 30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -7
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -8.5
+      jumpStartX: 18.5
+      jumpDistance: -5.5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 2
+      objectOnToPlatformY: -3.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 28.5
+      preJumpWallJumpDirectionSpeed: 10
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: -7.7595844
+      postJumpWallJumpDirectionSpeed: -8.5
+      firstJumpWallJumpHit: {x: 34.54, y: -7.7595844}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: -13.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 7
+      fallStartX: 6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -7
+      fallStartX: -6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -8.5
+      jumpStartX: 4.5
+      jumpDistance: 5.5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -8.5
+      jumpStartX: -4.5
+      jumpDistance: -5.5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: -13.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 7
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: -30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -8.5
+      jumpStartX: -18.5
+      jumpDistance: 5.5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 2
+      objectOnToPlatformY: -3.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: -28.5
+      preJumpWallJumpDirectionSpeed: -10
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: -7.7595844
+      postJumpWallJumpDirectionSpeed: 8.5
+      firstJumpWallJumpHit: {x: -34.54, y: -7.7595844}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: -13.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -13.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -13.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: -6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -3.5
+      jumpStartX: -14.5
+      jumpDistance: -5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -3.5
+      jumpStartX: -8.5
+      jumpDistance: 5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: -8.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -13.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: 6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -13.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -3.5
+      jumpStartX: 8.5
+      jumpDistance: -5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: -3.5
+      jumpStartX: 14.5
+      jumpDistance: 5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: -8.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: -13.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: -10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: -17
+      postFallWallJumpDirectionSpeed: 8
+      firstFallWallJumpHit: {x: -34.54, y: -5.458593}
+      fallWallJumpStartX: -30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -2
+      fallStartX: -30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 2
+      objectOnToPlatformY: 6.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: -28.5
+      preJumpWallJumpDirectionSpeed: -10
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 2.2404156
+      postJumpWallJumpDirectionSpeed: 8
+      firstJumpWallJumpHit: {x: -34.54, y: 2.2404156}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 1.5
+      jumpStartX: -18.5
+      jumpDistance: 5.5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: -34.54, y: 2.2404156}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -8.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: -34.54, y: 2.2404156}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: -3.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -8.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: -6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -8.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: 6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: -34.54, y: 2.2404156}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 1.5
+      jumpStartX: -4.5
+      jumpDistance: -5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: -34.54, y: 2.2404156}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 1.5
+      jumpStartX: 4.5
+      jumpDistance: 5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: -34.54, y: 2.2404156}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: -3.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 1
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -8.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 1.5
+      jumpStartX: 18.5
+      jumpDistance: -5
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 2
+      objectOnToPlatformY: 6.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 28.5
+      preJumpWallJumpDirectionSpeed: 10
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 2.2404156
+      postJumpWallJumpDirectionSpeed: -8
+      firstJumpWallJumpHit: {x: 34.54, y: 2.2404156}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 36.54, y: 0}
+      fallWallJumpStartX: 16.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: -13.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 34.54, y: 2.2404156}
+      preFallWallJumpDirectionSpeed: 10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: -17
+      postFallWallJumpDirectionSpeed: -8
+      firstFallWallJumpHit: {x: 34.54, y: -5.458593}
+      fallWallJumpStartX: 30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 2
+      fallStartX: 30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 34.54, y: 2.2404156}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: -3.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -3.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -16.5, y: NaN}
+      fallWallJumpStartX: -16.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 6.5
+      jumpStartX: -14.5
+      jumpDistance: -5
+      fallDirectionSpeed: 0
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -16.5, y: NaN}
+      fallWallJumpStartX: -16.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 6.5
+      jumpStartX: -8.5
+      jumpDistance: 5
+      fallDirectionSpeed: 0
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -16.5, y: NaN}
+      fallWallJumpStartX: -16.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -3.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: -6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -16.5, y: NaN}
+      fallWallJumpStartX: -16.5
+    objectOnFromPlatformY: 1.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -3.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: 6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -16.5, y: NaN}
+      fallWallJumpStartX: -16.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 6.5
+      jumpStartX: 8.5
+      jumpDistance: -5
+      fallDirectionSpeed: 0
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -16.5, y: NaN}
+      fallWallJumpStartX: -16.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 6.5
+      jumpStartX: 14.5
+      jumpDistance: 5
+      fallDirectionSpeed: 0
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -16.5, y: NaN}
+      fallWallJumpStartX: -16.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -3.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -16.5, y: NaN}
+      fallWallJumpStartX: -16.5
+    objectOnFromPlatformY: 1.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -1.5
+      fallStartX: -30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: -13.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: -30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: -10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: -17
+      postFallWallJumpDirectionSpeed: 8
+      firstFallWallJumpHit: {x: -34.54, y: 4.541407}
+      fallWallJumpStartX: -30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: -3.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: -30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: -10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: -7
+      postFallWallJumpDirectionSpeed: 8
+      firstFallWallJumpHit: {x: -34.54, y: 4.541407}
+      fallWallJumpStartX: -30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 2
+      objectOnToPlatformY: 16.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: -30.5
+      preJumpWallJumpStartX: -28.5
+      preJumpWallJumpDirectionSpeed: -10
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 12.240416
+      postJumpWallJumpDirectionSpeed: 8
+      firstJumpWallJumpHit: {x: -34.54, y: 12.240416}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -34.54, y: 4.541407}
+      fallWallJumpStartX: -30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 11.5
+      jumpStartX: -18.5
+      jumpDistance: 5
+      fallDirectionSpeed: 0
+      fallStartX: -30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: -34.54, y: 12.240416}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -34.54, y: 4.541407}
+      fallWallJumpStartX: -30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 1.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: -34.54, y: 12.240416}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -34.54, y: 4.541407}
+      fallWallJumpStartX: -30.5
+    objectOnFromPlatformY: 6.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 1.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: -6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 11.5
+      jumpStartX: -4.5
+      jumpDistance: -5
+      fallDirectionSpeed: 0
+      fallStartX: -6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 11.5
+      jumpStartX: 4.5
+      jumpDistance: 5
+      fallDirectionSpeed: 0
+      fallStartX: -6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 1.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: 6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: 6.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 1.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 11.5
+      jumpStartX: 18.5
+      jumpDistance: -5
+      fallDirectionSpeed: 0
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 2
+      objectOnToPlatformY: 16.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 28.5
+      preJumpWallJumpDirectionSpeed: 10
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 12.240416
+      postJumpWallJumpDirectionSpeed: -8
+      firstJumpWallJumpHit: {x: 34.54, y: 12.240416}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: -3.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 34.54, y: 12.240416}
+      preFallWallJumpDirectionSpeed: 10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: -8
+      postFallWallJumpDirectionSpeed: -8
+      firstFallWallJumpHit: {x: 34.54, y: 4.541407}
+      fallWallJumpStartX: 30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: -13.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 34.54, y: 12.240416}
+      preFallWallJumpDirectionSpeed: 10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: -17
+      postFallWallJumpDirectionSpeed: -8
+      firstFallWallJumpHit: {x: 34.54, y: 4.541407}
+      fallWallJumpStartX: 30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 1.5
+      fallStartX: 30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 34.54, y: 12.240416}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 34.54, y: 4.541407}
+      fallWallJumpStartX: 30.5
+    objectOnFromPlatformY: 6.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 6.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 16.5
+      jumpStartX: -14.5
+      jumpDistance: -5
+      fallDirectionSpeed: 0
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 16.5
+      jumpStartX: -8.5
+      jumpDistance: 5
+      fallDirectionSpeed: 0
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 6.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: -6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: 11.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 6.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: 6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 16.5
+      jumpStartX: 8.5
+      jumpDistance: -5
+      fallDirectionSpeed: 0
+      fallStartX: 6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 0
+      objectOnToPlatformY: 16.5
+      jumpStartX: 14.5
+      jumpDistance: 5
+      fallDirectionSpeed: 0
+      fallStartX: 6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 6.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: 11.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -1
+      fallStartX: -30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: -13.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: -30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: -10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: -17
+      postFallWallJumpDirectionSpeed: 8
+      firstFallWallJumpHit: {x: -34.54, y: 14.541407}
+      fallWallJumpStartX: -30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: -3.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: -30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: -10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: -8
+      postFallWallJumpDirectionSpeed: 8
+      firstFallWallJumpHit: {x: -34.54, y: 14.541407}
+      fallWallJumpStartX: -30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: 6.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: -30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: -10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 2
+      postFallWallJumpDirectionSpeed: 8
+      firstFallWallJumpHit: {x: -34.54, y: 14.541407}
+      fallWallJumpStartX: -30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 11.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: -16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: -34.54, y: 14.541407}
+      fallWallJumpStartX: -30.5
+    objectOnFromPlatformY: 16.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 11.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: -6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 11.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 3
+      fallStartX: 6.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 0, y: 0}
+      fallWallJumpStartX: 0
+    objectOnFromPlatformY: 16.5
+  - platformGameObject: {fileID: 0}
+    showConnectionHandles: 0
+    connectedNodes:
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: 6.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 2
+      postFallWallJumpDirectionSpeed: -8
+      firstFallWallJumpHit: {x: 34.54, y: 14.541407}
+      fallWallJumpStartX: 30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: -3.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: -8
+      postFallWallJumpDirectionSpeed: -8
+      firstFallWallJumpHit: {x: 34.54, y: 14.541407}
+      fallWallJumpStartX: 30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 3
+      objectOnToPlatformY: -13.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 0
+      fallStartX: 0
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 10
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: -17
+      postFallWallJumpDirectionSpeed: -8
+      firstFallWallJumpHit: {x: 34.54, y: 14.541407}
+      fallWallJumpStartX: 30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: -18.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: 1
+      fallStartX: 30.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 34.54, y: 14.541407}
+      fallWallJumpStartX: 30.5
+    - showConnectionHandles: 1
+      platformGameObject: {fileID: 0}
+      connectionType: 1
+      objectOnToPlatformY: 11.5
+      jumpStartX: 0
+      jumpDistance: 0
+      fallDirectionSpeed: -3
+      fallStartX: 16.5
+      preJumpWallJumpStartX: 0
+      preJumpWallJumpDirectionSpeed: 0
+      jumpWallJumpPlatform: {fileID: 0}
+      jumpWallJumpY: 0
+      postJumpWallJumpDirectionSpeed: 0
+      firstJumpWallJumpHit: {x: 0, y: 0}
+      preFallWallJumpDirectionSpeed: 0
+      fallWallJumpWall: {fileID: 0}
+      fallWallJumpY: 0
+      postFallWallJumpDirectionSpeed: 0
+      firstFallWallJumpHit: {x: 34.54, y: 14.541407}
+      fallWallJumpStartX: 30.5
+    objectOnFromPlatformY: 16.5

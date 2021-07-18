@@ -10,7 +10,7 @@ public class Countdown : MonoBehaviour
     [Header("Time Settings")]
     [Tooltip("Starting time")]
     public float startTime = 60.0f;
-    [Tooltip("When the countown is smaller that this number it will change color")]
+    [Tooltip("When the countdown is smaller that this number it will change color")]
     public float shortTimeCap = 10.0f;
     [Header("Aesthetics")]
     [Tooltip("Default color of countdown")]

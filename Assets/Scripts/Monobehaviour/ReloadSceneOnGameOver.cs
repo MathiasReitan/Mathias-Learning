@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ReloadSceneOnGameOver : MonoBehaviour
 {
+    public MenuController loseMenu;
     public float waitSecondsBeforeLoad = 2.0f;
 
     private void Update()
@@ -20,6 +21,6 @@ public class ReloadSceneOnGameOver : MonoBehaviour
     {
         yield return new WaitForSeconds(waitSeconds);
         GameInfo.gameOver = false;
-        SceneManagement.ReloadCurrentScene();
+        loseMenu.ForceActivateMenu();
     }
 }

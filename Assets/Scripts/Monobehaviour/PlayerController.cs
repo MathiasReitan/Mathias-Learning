@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Composites;
+using Random = UnityEngine.Random;
 
 /*  Gives player ability to be controlled
     Compatible with the Platform prefab

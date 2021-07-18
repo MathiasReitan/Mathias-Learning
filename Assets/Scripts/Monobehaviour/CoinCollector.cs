@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class CoinCollector : MonoBehaviour
 {
+    public MenuController winMenu;
     [HideInInspector]
     public int neededCoins = 0;
     [HideInInspector]
@@ -28,8 +29,8 @@ public class CoinCollector : MonoBehaviour
 
         if (++coinCount >= neededCoins)     //add to coinCount, and check if enough is collected
         {
-            Debug.Log("Winner :))");
             GameInfo.gameWon = true;
+            winMenu.ForceActivateMenu();
         }
     }
 }
