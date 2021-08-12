@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public enum Scene
 {
-     Level_1 = 0, Level_2 = 1, Level_3 = 2, Level_4 = 3, Main_Menu = 4
+     Level_1 = 0, Level_2 = 1, Level_3 = 2, Level_4 = 3, Level_5 = 4, Main_Menu = 5
 }
 
 public static class SceneManagement

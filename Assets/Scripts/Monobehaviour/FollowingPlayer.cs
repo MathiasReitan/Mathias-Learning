@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -25,6 +26,8 @@ public class FollowingPlayer : MonoBehaviour
 
     private void Start()
     {
+        GameInfo.gameOver = false;
+        GameInfo.gameWon = false;
         rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
         currentPlatformIndex = FindPlatformIndexInPFData(GetCurrentPlatform());
         
@@ -60,10 +63,11 @@ public class FollowingPlayer : MonoBehaviour
         return pathFindingData.pathFindingNodes.FindIndex(f => f.platformGameObject == platform);
     }
 
-    private GameObject GetCurrentPlatform()
+    private GameObject GetCurrentPlatform(GameObject gameObject = null)
     {
-        Vector2 pos = transform.position;
-        Vector2 scale = transform.localScale;
+        gameObject ??= this.gameObject;
+        Vector2 pos = gameObject.transform.position;
+        Vector2 scale = gameObject.transform.localScale;
         return Physics2D.BoxCast(new Vector2(pos.x, pos.y - scale.y / 2f - 0.1f), new Vector2(scale.x, 0.1f), 0f,
             Vector2.down, Mathf.Infinity, LayerMask.GetMask("Platform")).collider.gameObject;
     }
@@ -138,7 +142,7 @@ public class FollowingPlayer : MonoBehaviour
     {
         while (!GameInfo.gameOver && !GameInfo.gameWon)
         {
-            int goingToIndex = Random.Range(0, pathFindingData.pathFindingNodes.Count);
+            int goingToIndex = FindPlatformIndexInPFData(GetCurrentPlatform(gameObjectToFollow));
             yield return FollowPathCoroutine(GenerateShortestPath(
                 pathFindingData.pathFindingNodes[currentPlatformIndex],
                 pathFindingData.pathFindingNodes[goingToIndex]));
